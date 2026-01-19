@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제자교회 청년부 순 공과</title>
+    <style>
+        body {
+            background-color: #e3f2fd;
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 450px;
+            width: 85%;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 { color: #1976d2; font-size: 1.4rem; margin-bottom: 2rem; line-height: 1.4; }
+        
+        /* 메인 메뉴 버튼 */
+        .menu-group { display: flex; flex-direction: column; gap: 15px; flex-grow: 1; justify-content: center; }
+        .btn {
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            background-color: #bbdefb;
+            color: #0d47a1;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        /* 슬라이드 영역 */
+        #slide-container { display: none; flex-direction: column; height: 100%; }
+        #slides { flex-grow: 1; text-align: left; }
+        .slide h2 { color: #1976d2; border-bottom: 2px solid #e3f2fd; padding-bottom: 10px; font-size: 1.2rem; margin-top: 0; }
+        .content { font-size: 1.05rem; line-height: 1.7; color: #444; margin: 15px 0; }
+        .highlight { color: #d32f2f; font-weight: bold; display: block; margin-top: 10px; }
+
+        /* 하단 제어 영역 (수정된 부분) */
+        .controls {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 20px;
+        }
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #f0f0f0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .next-btn { background: #90caf9; color: #0d47a1; }
+        .home-btn {
+            width: 100%;
+            padding: 12px;
+            background: #1976d2;
+            color: white;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        ul { padding-left: 20px; margin: 10px 0; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="main-menu">
+        <h1>1월 25일 제자교회<br>청년부 순 공과</h1>
+        <div class="menu-group">
+            <button class="btn" onclick="startSlide('summary')">📖 1. 설교 요약</button>
+            <button class="btn" onclick="startSlide('study')">💬 2. 순 공과 질문</button>
+        </div>
+    </div>
+
+    <div id="slide-container">
+        <div id="slides"></div>
+        
+        <div class="controls">
+            <div class="nav-row">
+                <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">이전</button>
+                <span id="page-num" style="font-size: 0.9rem; color: #888;"></span>
+                <button class="nav-btn next-btn" id="nextBtn" onclick="changeSlide(1)">다음</button>
+            </div>
+            <button class="home-btn" onclick="goHome()">🏠 메인으로 돌아가기</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    let currentData = [];
+
+    const data = {
+        summary: [
+            {
+                title: "🔹 포인트 1. 죄의 결과는 분명하다",
+                text: "<ul><li>죄는 반드시 고통과 단절을 낳음</li><li>관계의 파괴, 수고의 고통, 죽음의 그림자</li><li>하나님을 떠난 삶에는 스스로 해결할 소망이 없음</li></ul>"
+            },
+            {
+                title: "🔹 포인트 2. 하나님은 심판 중에도 약속을 주신다",
+                text: "<ul><li>최초의 복음(Proto-Evangelium)</li><li>인간의 회복 계획은 인간의 회개 이전에 이미 주어짐</li><li>여자의 후손 → 예수 그리스도</li><li class='highlight'>📌 핵심 : 인간은 언약을 깨뜨렸지만, 하나님은 언약에 끝까지 신실하셨다.</li></ul>"
+            },
+            {
+                title: "🔹 포인트 3. 구원은 ‘상’이 아니라 ‘선물’이다",
+                text: "<ul><li>상: 자격 → 보상</li><li>선물: 자격 없음 → 은혜</li><li>구원은 노력의 결과 ❌</li><li>하나님의 선택과 사랑 ⭕</li></ul>"
+            }
+        ],
+        study: [
+            {
+                title: "① 현실 나눔",
+                text: "<p>요즘 내가 가장 자랑하고 싶어지는 것은 무엇인가요?<br>혹은, 나도 모르게 비교하게 되는 것은?</p>"
+            },
+            {
+                title: "② 말씀 연결",
+                text: "<p>오늘 말씀에서 가장 마음에 남은 단어는?<br>(저주, 고통, 약속, 후손, 은혜 등)</p><p><b>“구원이 상이 아니라 선물”</b>이라는 말이 나에게는 어떤 도전으로 들리나요?</p>"
+            },
+            {
+                title: "③ 복음 적용",
+                text: "<p>내가 하나님의 사랑을 자격으로 증명하려 했던 순간이 있다면?</p><p>이번 주, 하나님이 주신 선물로서의 구원을 어떻게 기억하고 싶나요?</p>"
+            }
+        ]
+    };
+
+    function startSlide(type) {
+        currentData = data[type];
+        currentSlide = 0;
+        document.getElementById('main-menu').style.display = 'none';
+        document.getElementById('slide-container').style.display = 'flex';
+        renderSlide();
+    }
+
+    function renderSlide() {
+        const slidesDiv = document.getElementById('slides');
+        const slide = currentData[currentSlide];
+        
+        slidesDiv.innerHTML = `
+            <div style="animation: fadeIn 0.4s">
+                <h2>${slide.title}</h2>
+                <div class="content">${slide.text}</div>
+            </div>
+        `;
+        
+        document.getElementById('page-num').innerText = `${currentSlide + 1} / ${currentData.length}`;
+        document.getElementById('prevBtn').style.visibility = currentSlide === 0 ? 'hidden' : 'visible';
+        document.getElementById('nextBtn').innerText = currentSlide === currentData.length - 1 ? '완료' : '다음';
+    }
+
+    function changeSlide(direction) {
+        currentSlide += direction;
+        if (currentSlide >= currentData.length) {
+            goHome();
+        } else if (currentSlide < 0) {
+            currentSlide = 0;
+        } else {
+            renderSlide();
+        }
+    }
+
+    function goHome() {
+        document.getElementById('main-menu').style.display = 'block';
+        document.getElementById('slide-container').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
