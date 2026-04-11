@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제자교회 청년부 부활주일 순 공과</title>
+    <title>제자교회 청년부 4월 12일 순 공과</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         body {
             background-color: #e3f2fd;
@@ -51,15 +52,40 @@
         .slide-title { color: #1976d2; font-size: 1.1rem; font-weight: bold; }
         
         .verse-box { background: #fdfaf0; border: 1px dashed #ffd54f; padding: 12px; margin-bottom: 15px; font-size: 0.9rem; color: #795548; line-height: 1.5; border-radius: 10px; }
-        .content { font-size: 0.92rem; line-height: 1.6; color: #333; }
-        .activity-box { background: #fff9c4; border-radius: 10px; padding: 12px; margin-top: 10px; font-size: 0.85rem; border: 1px solid #fbc02d; }
-        .example-box { background: #f8fbff; border-left: 4px solid #64b5f6; padding: 10px; margin: 10px 0; font-size: 0.85rem; color: #555; }
-        .highlight { color: #1976d2; font-weight: bold; }
+        .content { font-size: 0.95rem; line-height: 1.7; color: #333; }
+        .example-box { background: #f8fbff; border-left: 4px solid #64b5f6; padding: 10px; margin: 12px 0; font-size: 0.85rem; color: #555; }
+        
+        /* 카드 이미지 스타일 */
+        #card-capture {
+            background: linear-gradient(135deg, #64b5f6 0%, #1976d2 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .card-inner { border: 1px solid rgba(255,255,255,0.3); padding: 20px; border-radius: 10px; }
+        .card-title { font-size: 0.8rem; opacity: 0.9; margin-bottom: 15px; letter-spacing: 1px; }
+        .card-main { font-size: 1.1rem; line-height: 2; word-break: keep-all; }
+        .card-input {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid white;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            width: 100px;
+            font-size: 1.1rem;
+            outline: none;
+        }
+        .card-footer { margin-top: 15px; font-size: 0.7rem; opacity: 0.7; }
 
         .controls { margin-top: auto; display: flex; flex-direction: column; gap: 8px; padding-top: 15px; }
         .nav-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
         .nav-btn { flex: 1; padding: 12px; border: none; border-radius: 8px; background: #f0f0f0; font-weight: bold; cursor: pointer; }
         .next-btn { background: #90caf9; color: #0d47a1; }
+        .download-btn { background: #ffca28; color: #5d4037; width: 100%; padding: 12px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; margin-top: 5px; }
         .home-btn { width: 100%; padding: 10px; background: #1976d2; color: white; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; font-size: 0.85rem; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -69,19 +95,19 @@
 
 <div class="container" id="app">
     <div id="main-menu">
-        <h1>🌅 부활주일 순 공과</h1>
-        <div class="subtitle">부활, 내 삶의 무덤을 깨뜨리는 사건</div>
+        <h1>🌱 4월 12일 순 공과</h1>
+        <div class="subtitle">부르시는 하나님: "내가 누구인지가 아니라, 그분이 누구인지"</div>
         <div class="verse-box">
-            "그가 여기 계시지 않고 그가 말씀하시던 대로 살아나셨느니라 와서 그가 누우셨던 곳을 보라" (마 28:6)
+            "하나님이 모세에게 이르시되 나는 스스로 있는 자이니라" (출 3:14)
         </div>
         <div class="menu-group">
-            <button class="btn" onclick="startSlide()">💬 나눔 & 미션 시작하기<br><small style="font-weight:normal; font-size:0.8rem;">(직면-발견-해석-결단-활동)</small></button>
+            <button class="btn" onclick="startSlide()">📖 나눔 & 카드 만들기 시작</button>
         </div>
     </div>
 
     <div id="slide-container">
         <div id="slides"></div>
-        <div class="controls">
+        <div class="controls" id="control-panel">
             <div class="nav-row">
                 <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">이전</button>
                 <span id="page-num" style="font-size: 0.8rem; color: #888;"></span>
@@ -96,40 +122,31 @@
     let currentSlide = 0;
     const questions = [
         {
-            step: "직면",
-            title: "Q1. 내 마음을 가로막은 '돌문'은?",
-            text: "우리 인생에도 소망이 보이지 않게 가로막고 있는 <span class='highlight'>'무거운 돌'</span>이 있을 때가 많습니다.",
-            desc: "최근 나를 가장 무기력하게 만들거나, 하나님이 계시지 않는 것처럼 느끼게 하는 '나만의 돌문'은 무엇인가요?",
-            example: "예: 취업 준비의 불안함, 반복되는 죄의 문제, 관계의 단절 등"
+            step: "정체성",
+            title: "Q1. 나는 누구의 나인가?",
+            text: "모세는 40년 동안 이름 없는 목자로 살며 '실패자'라는 자아상이 강해졌습니다. 우리도 세상 지표로 자신을 정의하곤 합니다.",
+            desc: "나를 가장 크게 정의하고 있는 '타이틀'은 무엇인가요? 그것이 사라진다면 나는 나를 누구라고 설명할 수 있을까요?",
+            example: "세상이 아닌, 하나님이 나를 부르신 그 음성에 집중해 봅시다."
         },
         {
-            step: "발견",
-            title: "Q2. \"평안하냐\"는 음성이 들리시나요?",
-            text: "부활하신 예수님의 첫 마디는 단순히 안부가 아니라, <span class='highlight'>죽음을 이긴 자만이 줄 수 있는 승리의 선포</span>입니다.",
-            desc: "요즘 나의 마음을 지배하고 있는 감정은 '생존을 위한 불안'인가요, 아니면 '부활의 주님이 주시는 안심'인가요?",
-            example: "세상은 '생존'을 요구하며 불안을 주지만, 주님은 '평안'을 주십니다."
+            step: "장벽",
+            title: "Q2. \"하나님, 타이밍이 틀렸어요.\"",
+            text: "모세는 '나이'와 '트라우마' 때문에 거절했습니다. 우리도 현실적인 제약을 이유로 부르심에 조건을 걸곤 합니다.",
+            desc: "하나님이 주신 마음이 있음에도, 내가 지금 \"안 된다\"고 말하는 현실적인 '장벽'은 무엇인가요?",
+            example: "예: \"취준 중이라서\", \"성격이 원래 이래서\" 등"
         },
         {
-            step: "해석",
-            title: "Q3. 부활은 이론인가요, 사건인가요?",
-            text: "제자들은 부활의 주님을 만난 후, 도망치던 삶에서 <span class='highlight'>목숨을 건 증인</span>으로 완전히 변화되었습니다.",
-            desc: "예수님이 지금 내 곁에 살아계심을 정말 믿는다면, 내가 세상을 바라보는 눈(가치관)은 어떻게 달라져야 할까요?",
-            example: "예: 결과보다 과정을 소중히 여기기, 남과 비교하며 자책하지 않기 등"
-        },
-        {
-            step: "결단",
-            title: "Q4. 나의 '갈릴리'는 어디인가요?",
-            text: "주님은 제자들에게 <span class='highlight'>'갈릴리'</span>로 가라고 하셨습니다. 그곳은 그들이 일하고 실패했던 '일상의 현장'입니다.",
-            desc: "이번 주, 내가 부활의 증인으로 살아가야 할 현장은 어디인가요? 그곳에서 주님이 함께하심을 어떻게 보여줄 수 있을까요?",
-            example: "예: 직장에서 정직하게 일하기, 지친 친구에게 부활의 소망 전하기 등"
+            step: "신뢰",
+            title: "Q3. \"스스로 계신 분\"을 배경 삼기",
+            text: "하나님은 자신을 \"나는 나다(I AM)\"라고 소개하셨습니다. 모든 상황을 초월하시는 주권자라는 선언입니다.",
+            desc: "불안한 영역(진로, 경제 등)에서 하나님이 \"나는 주권자다\"라고 말씀하신다면 어떤 안심과 용기를 주나요?",
+            example: "나의 능력이 아닌 하나님의 성품이 우리의 배경입니다."
         },
         {
             step: "활동",
-            title: "발자국 미션: 나의 갈릴리로!",
-            text: "부활주일의 감격이 월요일의 일상으로 이어지게 만드는 <span class='highlight'>실천적 파송</span> 시간입니다.",
-            activity: true,
-            desc: "준비물: 종이 발바닥 카드(또는 포스트잇), 펜",
-            example: "방법:<br>1. 카드에 살아내야 할 <b>구체적 장소</b> 적기<br>2. 그곳에서 행할 <b>부활의 첫 발자국(행동)</b> 적기<br>3. 서로 카드를 바꾸어 <b>중보기도</b> 하기<br>4. 카드를 지갑에 넣어 일주일간 기억하기"
+            title: "I AM 카드 만들기",
+            isActivity: true,
+            desc: "불안한 미래 앞에서 하나님의 성품을 나만의 '빽'으로 정의해 보세요. 빈칸을 채운 후 아래 버튼을 눌러 이미지를 저장하세요!",
         }
     ];
 
@@ -144,39 +161,70 @@
         const slidesDiv = document.getElementById('slides');
         const q = questions[currentSlide];
         
-        let extraContent = q.activity ? 
-            `<div class="activity-box"><b>📝 진행 방법:</b><br>${q.example}</div>` : 
-            `<div class="example-box">${q.example}</div>`;
-
-        slidesDiv.innerHTML = `
-            <div style="animation: fadeIn 0.4s">
-                <div class="slide-header">
-                    <span class="slide-step">${q.step}</span>
-                    <span class="slide-title">${q.title}</span>
+        if (q.isActivity) {
+            slidesDiv.innerHTML = `
+                <div style="animation: fadeIn 0.4s">
+                    <div class="slide-header">
+                        <span class="slide-step">${q.step}</span>
+                        <span class="slide-title">${q.title}</span>
+                    </div>
+                    <p style="font-size:0.85rem; color:#666; margin-bottom:10px;">${q.desc}</p>
+                    <div id="card-capture">
+                        <div class="card-inner">
+                            <div class="card-title">I AM THAT I AM</div>
+                            <div class="card-main">
+                                하나님은 <br>
+                                <input type="text" class="card-input" placeholder="(부족한 점)" id="input1"> 이(가)<br>
+                                부족한 나에게 <br>
+                                <input type="text" class="card-input" placeholder="(하나님의 성품)" id="input2"> 이(가)<br>
+                                되시는 분이다.
+                            </div>
+                            <div class="card-footer">2026.04.12 JEJA YOUTH</div>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="saveCard()">💾 이미지로 저장하기</button>
                 </div>
-                <div class="content">
-                    <p>${q.text}</p>
-                    <p style="font-weight:bold; font-size:1rem; border-top: 1px solid #eee; padding-top:10px;">${q.desc}</p>
+            `;
+        } else {
+            slidesDiv.innerHTML = `
+                <div style="animation: fadeIn 0.4s">
+                    <div class="slide-header">
+                        <span class="slide-step">${q.step}</span>
+                        <span class="slide-title">${q.title}</span>
+                    </div>
+                    <div class="content">
+                        <p>${q.text}</p>
+                        <p style="font-weight:bold; font-size:1.05rem; border-top: 1px solid #eee; padding-top:10px;">${q.desc}</p>
+                    </div>
+                    <div class="example-box">${q.example}</div>
                 </div>
-                ${extraContent}
-                ${q.activity ? `<p style="font-size:0.8rem; color:#888; text-align:center; margin-top:10px;">"부활의 첫 발걸음을 떼는 당신을 응원합니다!"</p>` : ''}
-            </div>
-        `;
+            `;
+        }
         
         document.getElementById('page-num').innerText = `${currentSlide + 1} / ${questions.length}`;
         document.getElementById('prevBtn').style.visibility = currentSlide === 0 ? 'hidden' : 'visible';
-        document.getElementById('nextBtn').innerText = currentSlide === questions.length - 1 ? '모두 마침' : '다음';
+        document.getElementById('nextBtn').innerText = currentSlide === questions.length - 1 ? '마침' : '다음';
     }
 
     function changeSlide(direction) {
         currentSlide += direction;
-        if (currentSlide >= questions.length) {
-            goHome();
-        } else if (currentSlide < 0) {
-            currentSlide = 0;
-        } else {
-            renderSlide();
-        }
+        if (currentSlide >= questions.length) goHome();
+        else if (currentSlide < 0) currentSlide = 0;
+        else renderSlide();
+    }
+
+    function saveCard() {
+        const card = document.getElementById('card-capture');
+        // 입력을 텍스트로 고정하여 캡처
+        const in1 = document.getElementById('input1');
+        const in2 = document.getElementById('input2');
+        
+        html2canvas(card, { backgroundColor: null, scale: 2 }).then(canvas => {
+            const link = document.createElement('a');
+            link.download = 'IAM-Card.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
     }
 
     function goHome() {
