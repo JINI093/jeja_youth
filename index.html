@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제자교회 청년부 4월 12일 순 공과</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <title>제자교회 청년부 4월 26일 순 공과</title>
     <style>
         body {
-            background-color: #e3f2fd;
+            background-color: #f3e5f5;
             font-family: 'Pretendard', -apple-system, sans-serif;
             display: flex;
             justify-content: center;
@@ -18,99 +17,71 @@
         }
         .container {
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             text-align: center;
             max-width: 450px;
             width: 85%;
-            min-height: 550px;
+            min-height: 480px;
             display: flex;
             flex-direction: column;
         }
-        h1 { color: #1976d2; font-size: 1.3rem; margin-bottom: 0.5rem; line-height: 1.4; }
-        .subtitle { color: #64b5f6; font-size: 0.9rem; margin-bottom: 1.5rem; font-weight: bold; }
+        h1 { color: #7b1fa2; font-size: 1.4rem; margin-bottom: 0.5rem; line-height: 1.4; }
+        .subtitle { color: #ab47bc; font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: bold; }
         
-        .menu-group { display: flex; flex-direction: column; gap: 12px; flex-grow: 1; justify-content: center; }
+        .menu-group { display: flex; flex-direction: column; gap: 15px; flex-grow: 1; justify-content: center; }
         .btn {
-            padding: 18px;
+            padding: 20px;
             border: none;
-            border-radius: 12px;
-            background-color: #bbdefb;
-            color: #0d47a1;
-            font-size: 1.05rem;
+            border-radius: 15px;
+            background-color: #f3e5f5;
+            color: #4a148c;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.2s;
-            line-height: 1.4;
         }
 
         #slide-container { display: none; flex-direction: column; height: 100%; text-align: left; }
-        #slides { flex-grow: 1; overflow-y: auto; padding-right: 5px; }
-        .slide-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; border-bottom: 2px solid #e3f2fd; padding-bottom: 10px; }
-        .slide-step { background: #1976d2; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
-        .slide-title { color: #1976d2; font-size: 1.1rem; font-weight: bold; }
+        #slides { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+        .slide-header { display: flex; align-items: center; gap: 8px; margin-bottom: 15px; border-bottom: 2px solid #f3e5f5; padding-bottom: 10px; }
+        .slide-step { background: #7b1fa2; color: white; padding: 3px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; }
+        .slide-title { color: #7b1fa2; font-size: 1.2rem; font-weight: bold; }
         
-        .verse-box { background: #fdfaf0; border: 1px dashed #ffd54f; padding: 12px; margin-bottom: 15px; font-size: 0.9rem; color: #795548; line-height: 1.5; border-radius: 10px; }
-        .content { font-size: 0.95rem; line-height: 1.7; color: #333; }
-        .example-box { background: #f8fbff; border-left: 4px solid #64b5f6; padding: 10px; margin: 12px 0; font-size: 0.85rem; color: #555; }
+        .verse-box { background: #fffde7; border: 1px dashed #fbc02d; padding: 15px; margin-bottom: 20px; font-size: 0.9rem; color: #5d4037; line-height: 1.6; border-radius: 12px; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #333; margin-bottom: 20px; }
+        .desc-text { font-size: 1.1rem; font-weight: bold; color: #4a148c; background: #fdf7ff; padding: 15px; border-radius: 10px; line-height: 1.6; }
         
-        /* 카드 이미지 스타일 */
-        #card-capture {
-            background: linear-gradient(135deg, #64b5f6 0%, #1976d2 100%);
-            color: white;
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .card-inner { border: 1px solid rgba(255,255,255,0.3); padding: 20px; border-radius: 10px; }
-        .card-title { font-size: 0.8rem; opacity: 0.9; margin-bottom: 15px; letter-spacing: 1px; }
-        .card-main { font-size: 1.1rem; line-height: 2; word-break: keep-all; }
-        .card-input {
-            background: transparent;
-            border: none;
-            border-bottom: 2px solid white;
-            color: #fff;
-            font-weight: bold;
-            text-align: center;
-            width: 100px;
-            font-size: 1.1rem;
-            outline: none;
-        }
-        .card-footer { margin-top: 15px; font-size: 0.7rem; opacity: 0.7; }
-
-        .controls { margin-top: auto; display: flex; flex-direction: column; gap: 8px; padding-top: 15px; }
-        .nav-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-        .nav-btn { flex: 1; padding: 12px; border: none; border-radius: 8px; background: #f0f0f0; font-weight: bold; cursor: pointer; }
-        .next-btn { background: #90caf9; color: #0d47a1; }
-        .download-btn { background: #ffca28; color: #5d4037; width: 100%; padding: 12px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; margin-top: 5px; }
-        .home-btn { width: 100%; padding: 10px; background: #1976d2; color: white; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; font-size: 0.85rem; }
+        .controls { margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding-top: 20px; }
+        .nav-row { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+        .nav-btn { flex: 1; padding: 15px; border: none; border-radius: 10px; background: #f5f5f5; font-weight: bold; cursor: pointer; color: #666; }
+        .next-btn { background: #e1bee7; color: #4a148c; }
+        .home-btn { width: 100%; padding: 12px; background: #7b1fa2; color: white; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; font-size: 0.9rem; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
-<div class="container" id="app">
+<div class="container">
     <div id="main-menu">
-        <h1>🌱 4월 12일 순 공과</h1>
-        <div class="subtitle">부르시는 하나님: "내가 누구인지가 아니라, 그분이 누구인지"</div>
+        <h1>💎 4월 26일 순 공과</h1>
+        <div class="subtitle">정체성을 세우시는 하나님</div>
         <div class="verse-box">
-            "하나님이 모세에게 이르시되 나는 스스로 있는 자이니라" (출 3:14)
+            "너희가 내 말을 잘 듣고 내 언약을 지키면 너희는 모든 민족 중에서 내 소유(세굴라)가 되겠고" (출 19:5)
         </div>
         <div class="menu-group">
-            <button class="btn" onclick="startSlide()">📖 나눔 & 카드 만들기 시작</button>
+            <button class="btn" onclick="startSlide()">💬 나눔 질문 시작하기</button>
         </div>
     </div>
 
     <div id="slide-container">
         <div id="slides"></div>
-        <div class="controls" id="control-panel">
+        <div class="controls">
             <div class="nav-row">
                 <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">이전</button>
-                <span id="page-num" style="font-size: 0.8rem; color: #888;"></span>
+                <span id="page-num" style="font-size: 0.9rem; color: #888;"></span>
                 <button class="nav-btn next-btn" id="nextBtn" onclick="changeSlide(1)">다음</button>
             </div>
             <button class="home-btn" onclick="goHome()">🏠 처음으로</button>
@@ -122,31 +93,22 @@
     let currentSlide = 0;
     const questions = [
         {
-            step: "정체성",
-            title: "Q1. 나는 누구의 나인가?",
-            text: "모세는 40년 동안 이름 없는 목자로 살며 '실패자'라는 자아상이 강해졌습니다. 우리도 세상 지표로 자신을 정의하곤 합니다.",
-            desc: "나를 가장 크게 정의하고 있는 '타이틀'은 무엇인가요? 그것이 사라진다면 나는 나를 누구라고 설명할 수 있을까요?",
-            example: "세상이 아닌, 하나님이 나를 부르신 그 음성에 집중해 봅시다."
+            step: "마음 열기",
+            title: "Q1. 나만의 보물 1호는?",
+            text: "거창한 게 아니어도 괜찮아요! 내가 요즘 가장 아끼는 물건이나 취미, 혹은 보고만 있어도 힐링 되는 존재가 있다면 소개해 주세요.",
+            desc: "그 존재가 나에게 주는 위로와 기쁨은 무엇인가요?"
         },
         {
-            step: "장벽",
-            title: "Q2. \"하나님, 타이밍이 틀렸어요.\"",
-            text: "모세는 '나이'와 '트라우마' 때문에 거절했습니다. 우리도 현실적인 제약을 이유로 부르심에 조건을 걸곤 합니다.",
-            desc: "하나님이 주신 마음이 있음에도, 내가 지금 \"안 된다\"고 말하는 현실적인 '장벽'은 무엇인가요?",
-            example: "예: \"취준 중이라서\", \"성격이 원래 이래서\" 등"
+            step: "말씀 되새기기",
+            title: "Q2. 보물(세굴라)의 기준",
+            text: "세상은 보통 나의 쓸모나 스펙을 보고 가치를 매깁니다. 하지만 하나님이 나를 보물로 여기시는 기준은 세상과 전혀 다릅니다.",
+            desc: "하나님이 나를 보물로 여기시는 기준은 세상과 어떻게 다른지 함께 나누어 봐요."
         },
         {
-            step: "신뢰",
-            title: "Q3. \"스스로 계신 분\"을 배경 삼기",
-            text: "하나님은 자신을 \"나는 나다(I AM)\"라고 소개하셨습니다. 모든 상황을 초월하시는 주권자라는 선언입니다.",
-            desc: "불안한 영역(진로, 경제 등)에서 하나님이 \"나는 주권자다\"라고 말씀하신다면 어떤 안심과 용기를 주나요?",
-            example: "나의 능력이 아닌 하나님의 성품이 우리의 배경입니다."
-        },
-        {
-            step: "활동",
-            title: "I AM 카드 만들기",
-            isActivity: true,
-            desc: "불안한 미래 앞에서 하나님의 성품을 나만의 '빽'으로 정의해 보세요. 빈칸을 채운 후 아래 버튼을 눌러 이미지를 저장하세요!",
+            step: "삶으로 살기",
+            title: "Q3. 꼬리표 떼어내기",
+            text: "직장에서의 비교나 미래에 대한 불안함 때문에 기가 죽을 때가 있죠. 하지만 우리는 하나님의 특별한 소유입니다.",
+            desc: "이번 주, 세상이 붙인 '꼬리표'를 떼어버리고 당당해지고 싶은 구체적인 상황은 언제인가요?"
         }
     ];
 
@@ -161,45 +123,16 @@
         const slidesDiv = document.getElementById('slides');
         const q = questions[currentSlide];
         
-        if (q.isActivity) {
-            slidesDiv.innerHTML = `
-                <div style="animation: fadeIn 0.4s">
-                    <div class="slide-header">
-                        <span class="slide-step">${q.step}</span>
-                        <span class="slide-title">${q.title}</span>
-                    </div>
-                    <p style="font-size:0.85rem; color:#666; margin-bottom:10px;">${q.desc}</p>
-                    <div id="card-capture">
-                        <div class="card-inner">
-                            <div class="card-title">I AM THAT I AM</div>
-                            <div class="card-main">
-                                하나님은 <br>
-                                <input type="text" class="card-input" placeholder="(부족한 점)" id="input1"> 이(가)<br>
-                                부족한 나에게 <br>
-                                <input type="text" class="card-input" placeholder="(하나님의 성품)" id="input2"> 이(가)<br>
-                                되시는 분이다.
-                            </div>
-                            <div class="card-footer">2026.04.12 JEJA YOUTH</div>
-                        </div>
-                    </div>
-                    <button class="download-btn" onclick="saveCard()">💾 이미지로 저장하기</button>
+        slidesDiv.innerHTML = `
+            <div style="animation: fadeIn 0.4s">
+                <div class="slide-header">
+                    <span class="slide-step">${q.step}</span>
+                    <span class="slide-title">${q.title}</span>
                 </div>
-            `;
-        } else {
-            slidesDiv.innerHTML = `
-                <div style="animation: fadeIn 0.4s">
-                    <div class="slide-header">
-                        <span class="slide-step">${q.step}</span>
-                        <span class="slide-title">${q.title}</span>
-                    </div>
-                    <div class="content">
-                        <p>${q.text}</p>
-                        <p style="font-weight:bold; font-size:1.05rem; border-top: 1px solid #eee; padding-top:10px;">${q.desc}</p>
-                    </div>
-                    <div class="example-box">${q.example}</div>
-                </div>
-            `;
-        }
+                <div class="content-text">${q.text}</div>
+                <div class="desc-text">${q.desc}</div>
+            </div>
+        `;
         
         document.getElementById('page-num').innerText = `${currentSlide + 1} / ${questions.length}`;
         document.getElementById('prevBtn').style.visibility = currentSlide === 0 ? 'hidden' : 'visible';
@@ -211,20 +144,6 @@
         if (currentSlide >= questions.length) goHome();
         else if (currentSlide < 0) currentSlide = 0;
         else renderSlide();
-    }
-
-    function saveCard() {
-        const card = document.getElementById('card-capture');
-        // 입력을 텍스트로 고정하여 캡처
-        const in1 = document.getElementById('input1');
-        const in2 = document.getElementById('input2');
-        
-        html2canvas(card, { backgroundColor: null, scale: 2 }).then(canvas => {
-            const link = document.createElement('a');
-            link.download = 'IAM-Card.png';
-            link.href = canvas.toDataURL();
-            link.click();
-        });
     }
 
     function goHome() {
