@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제자교회 청년부 4월 26일 순 공과</title>
+    <title>제자교회 청년부 5월 10일 순 공과</title>
     <style>
         body {
-            background-color: #f3e5f5;
+            background-color: #f1f8e9; /* 부드러운 연두색 (생명과 인도함) */
             font-family: 'Pretendard', -apple-system, sans-serif;
             display: flex;
             justify-content: center;
@@ -23,20 +23,20 @@
             text-align: center;
             max-width: 450px;
             width: 85%;
-            min-height: 480px;
+            min-height: 520px;
             display: flex;
             flex-direction: column;
         }
-        h1 { color: #7b1fa2; font-size: 1.4rem; margin-bottom: 0.5rem; line-height: 1.4; }
-        .subtitle { color: #ab47bc; font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: bold; }
+        h1 { color: #2e7d32; font-size: 1.4rem; margin-bottom: 0.5rem; line-height: 1.4; }
+        .subtitle { color: #689f38; font-size: 1rem; margin-bottom: 1.5rem; font-weight: bold; }
         
         .menu-group { display: flex; flex-direction: column; gap: 15px; flex-grow: 1; justify-content: center; }
         .btn {
             padding: 20px;
             border: none;
             border-radius: 15px;
-            background-color: #f3e5f5;
-            color: #4a148c;
+            background-color: #e8f5e9;
+            color: #1b5e20;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
@@ -45,19 +45,22 @@
 
         #slide-container { display: none; flex-direction: column; height: 100%; text-align: left; }
         #slides { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
-        .slide-header { display: flex; align-items: center; gap: 8px; margin-bottom: 15px; border-bottom: 2px solid #f3e5f5; padding-bottom: 10px; }
-        .slide-step { background: #7b1fa2; color: white; padding: 3px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; }
-        .slide-title { color: #7b1fa2; font-size: 1.2rem; font-weight: bold; }
+        .slide-header { display: flex; align-items: center; gap: 8px; margin-bottom: 15px; border-bottom: 2px solid #e8f5e9; padding-bottom: 10px; }
+        .slide-step { background: #2e7d32; color: white; padding: 3px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; }
+        .slide-title { color: #2e7d32; font-size: 1.2rem; font-weight: bold; }
         
-        .verse-box { background: #fffde7; border: 1px dashed #fbc02d; padding: 15px; margin-bottom: 20px; font-size: 0.9rem; color: #5d4037; line-height: 1.6; border-radius: 12px; }
-        .content-text { font-size: 1rem; line-height: 1.8; color: #333; margin-bottom: 20px; }
-        .desc-text { font-size: 1.1rem; font-weight: bold; color: #4a148c; background: #fdf7ff; padding: 15px; border-radius: 10px; line-height: 1.6; }
+        .verse-box { background: #fff9c4; border: 1px dashed #fbc02d; padding: 15px; margin-bottom: 20px; font-size: 0.9rem; color: #5d4037; line-height: 1.6; border-radius: 12px; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #333; margin-bottom: 15px; }
+        .desc-text { font-size: 1.05rem; font-weight: bold; color: #1b5e20; background: #f1f8e9; padding: 15px; border-radius: 10px; line-height: 1.6; }
         
+        .action-box { background: #e3f2fd; border-left: 4px solid #1e88e5; padding: 15px; border-radius: 0 10px 10px 0; margin-top: 10px; }
+        .action-title { font-weight: bold; color: #1565c0; font-size: 0.9rem; margin-bottom: 5px; display: block; }
+
         .controls { margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding-top: 20px; }
         .nav-row { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
         .nav-btn { flex: 1; padding: 15px; border: none; border-radius: 10px; background: #f5f5f5; font-weight: bold; cursor: pointer; color: #666; }
-        .next-btn { background: #e1bee7; color: #4a148c; }
-        .home-btn { width: 100%; padding: 12px; background: #7b1fa2; color: white; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; font-size: 0.9rem; }
+        .next-btn { background: #c8e6c9; color: #1b5e20; }
+        .home-btn { width: 100%; padding: 12px; background: #2e7d32; color: white; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; font-size: 0.9rem; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -65,17 +68,19 @@
 <body>
 
 <div class="container">
+    <!-- 메인 메뉴 -->
     <div id="main-menu">
-        <h1>💎 4월 26일 순 공과</h1>
-        <div class="subtitle">정체성을 세우시는 하나님</div>
+        <h1>🌿 5월 10일 순 공과</h1>
+        <div class="subtitle">사랑은 존중으로 드러난다</div>
         <div class="verse-box">
-            "너희가 내 말을 잘 듣고 내 언약을 지키면 너희는 모든 민족 중에서 내 소유(세굴라)가 되겠고" (출 19:5)
+            "나는 너를 애굽 땅, 종 되었던 집에서 인도하여 낸 네 하나님 여호와니라. 너는 나 외에는 다른 신들을 네게 두지 말라" (출 20:2-3)
         </div>
         <div class="menu-group">
             <button class="btn" onclick="startSlide()">💬 나눔 질문 시작하기</button>
         </div>
     </div>
 
+    <!-- 슬라이드 영역 -->
     <div id="slide-container">
         <div id="slides"></div>
         <div class="controls">
@@ -93,22 +98,29 @@
     let currentSlide = 0;
     const questions = [
         {
-            step: "마음 열기",
-            title: "Q1. 나만의 보물 1호는?",
-            text: "거창한 게 아니어도 괜찮아요! 내가 요즘 가장 아끼는 물건이나 취미, 혹은 보고만 있어도 힐링 되는 존재가 있다면 소개해 주세요.",
-            desc: "그 존재가 나에게 주는 위로와 기쁨은 무엇인가요?"
+            step: "Ice Breaking",
+            title: "Q1. 절대 안 돼!",
+            text: "어릴 적, 부모님이 \"절대 안 돼!\"라고 하셨던 것 중에 지금 생각하면 감사하거나 재미있는 기억이 있나요?",
+            desc: "그때는 이해되지 않았지만, 시간이 지나 보호였음을 깨닫게 된 경험을 나누어 보세요."
         },
         {
-            step: "말씀 되새기기",
-            title: "Q2. 보물(세굴라)의 기준",
-            text: "세상은 보통 나의 쓸모나 스펙을 보고 가치를 매깁니다. 하지만 하나님이 나를 보물로 여기시는 기준은 세상과 전혀 다릅니다.",
-            desc: "하나님이 나를 보물로 여기시는 기준은 세상과 어떻게 다른지 함께 나누어 봐요."
+            step: "Word",
+            title: "Q2. 인도하여 낸 여호와",
+            text: "하나님은 계명을 주시기 전, 자신을 '구원자'로 먼저 소개하셨습니다. 우리를 묶기 위해서가 아니라 살리기 위해 오신 분입니다.",
+            desc: "하나님이 \"다른 신을 두지 말라\"고 하신 것이 우리를 '구속'하기 위함일까요, 아니면 '보호'하기 위함일까요?"
         },
         {
-            step: "삶으로 살기",
-            title: "Q3. 꼬리표 떼어내기",
-            text: "직장에서의 비교나 미래에 대한 불안함 때문에 기가 죽을 때가 있죠. 하지만 우리는 하나님의 특별한 소유입니다.",
-            desc: "이번 주, 세상이 붙인 '꼬리표'를 떼어버리고 당당해지고 싶은 구체적인 상황은 언제인가요?"
+            step: "Word",
+            title: "Q3. 위험한 장난감",
+            text: "우리는 때로 하나님의 \"안 돼\"라는 음성을 무시하고 자꾸 손을 뻗게 되는 '우상'을 가지고 있을 때가 있습니다.",
+            desc: "요즘 내가 하나님보다 더 의지하거나, 놓지 못하고 있는 나만의 '위험한 장난감'은 무엇인가요?"
+        },
+        {
+            step: "Action",
+            title: "Q4. 삶의 주인을 고백하기",
+            text: "이번 주, 우리의 삶에서 하나님의 주인 되심을 구체적으로 선포하고 서로를 위해 기도하는 시간을 가집시다.",
+            desc: "매일 아침 \"하나님, 오늘 제 인생의 주인은 하나님이십니다!\"라고 선포해 보세요.",
+            isAction: true
         }
     ];
 
@@ -123,6 +135,13 @@
         const slidesDiv = document.getElementById('slides');
         const q = questions[currentSlide];
         
+        let actionHTML = q.isAction ? `
+            <div class="action-box">
+                <span class="action-title">🙏 함께 기도하기</span>
+                <p style="font-size:0.85rem; color:#555; margin:0;">순원들이 각자 붙들고 있는 불안과 우상을 하나님 앞에 내려놓을 수 있도록 서로 손을 잡고 기도합시다.</p>
+            </div>
+        ` : "";
+
         slidesDiv.innerHTML = `
             <div style="animation: fadeIn 0.4s">
                 <div class="slide-header">
@@ -131,6 +150,7 @@
                 </div>
                 <div class="content-text">${q.text}</div>
                 <div class="desc-text">${q.desc}</div>
+                ${actionHTML}
             </div>
         `;
         
