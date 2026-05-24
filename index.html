@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제자교회 청년부 5월 17일 순 공과</title>
+    <title>제자교회 청년부 5월 24일 순 공과</title>
     <style>
         body {
             background-color: #fbe9e7;
@@ -48,10 +48,9 @@
         .slide-step { background: #d84315; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; white-space: nowrap; }
         .slide-title { color: #d84315; font-size: 1.05rem; font-weight: bold; line-height: 1.4; }
         
-        .quote-box { background: #fff8e1; border-left: 4px solid #ffb300; padding: 12px; margin-bottom: 15px; font-size: 0.88rem; color: #5d4037; line-height: 1.6; border-radius: 0 10px 10px 0; font-style: italic; }
         .verse-box { background: #fafafa; border: 1px dashed #ccc; padding: 12px; margin-bottom: 15px; font-size: 0.85rem; color: #666; line-height: 1.5; border-radius: 10px; }
-        .content-text { font-size: 0.92rem; line-height: 1.7; color: #555; margin-bottom: 12px; }
-        .desc-text { font-size: 1.05rem; font-weight: bold; color: #bf360c; background: #fff5f5; padding: 15px; border-radius: 10px; line-height: 1.6; border: 1px solid #ffcdd2; }
+        .content-text { font-size: 0.95rem; line-height: 1.7; color: #444; margin-bottom: 12px; }
+        .choice-box { background: #fff8e1; border-left: 4px solid #ffb300; padding: 10px 12px; margin-top: 8px; font-size: 0.88rem; color: #5d4037; line-height: 1.5; border-radius: 0 8px 8px 0; }
         
         .controls { margin-top: auto; display: flex; flex-direction: column; gap: 8px; padding-top: 15px; }
         .nav-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
@@ -68,13 +67,13 @@
 
 <div class="container">
     <div id="main-menu">
-        <h1>💞 5월 17일 순 공과</h1>
-        <div class="subtitle">결혼과 연애 [환장인가 환상인가?]</div>
+        <h1>⛪ 5월 24일 순 공과</h1>
+        <div class="subtitle">예배가 무너지면 삶이 무너진다</div>
         <div class="verse-box">
-            "여호와 하나님이 이르시되 사람이 혼자 사는 것이 좋지 못하니 내가 그를 위하여 돕는 배필을 지으리라 하시니라" (창 2:18)
+            "안식일을 기억하여 거룩하게 지키라 ... 이는 엿새 동안에 나 여호와가 하늘과 땅과 바다와 그 가운데 모든 것을 만들고 일곱째 날에 쉬었음이라" <br>(출 20:8, 11)
         </div>
         <div class="menu-group">
-            <button class="btn" onclick="startSlide()">📖 팀 켈러 『결혼을 말하다』<br><small style="font-weight:normal; font-size:0.8rem; display:block; margin-top:5px;">순별 나눔 시작하기</small></button>
+            <button class="btn" onclick="startSlide()">📖 말씀 소그룹 나눔<br><small style="font-weight:normal; font-size:0.8rem; display:block; margin-top:5px;">순별 나눔 시작하기</small></button>
         </div>
     </div>
 
@@ -96,20 +95,28 @@
     let currentSlide = 0;
 
     const questions = [
-        // 1장
-        { chapter: "1장: 환상 깨기", title: "Q1. 내가 꿈꾸는 이상형", quote: "“배우자가 당신의 모든 결핍을 채워줄 것이라 기대하는 것은 그 사람을 하나님의 자리에 앉히는 우상숭배다.”", text: "외모, 경제력, 성격, 신앙, 가치관 등 솔직하게 가리지 않고 이야기해 봅시다.", desc: "내가 생각하는 ‘이상적인 배우자’의 조건 TOP 3는 무엇인가요?" },
-        { chapter: "1장: 환상 깨기", title: "Q2. 조건의 본질 직면하기", quote: "“배우자가 당신의 모든 결핍을 채워줄 것이라 기대하는 것은 그 사람을 하나님의 자리에 앉히는 우상숭배다.”", text: "우리가 내세우는 수많은 조건 이면에는 내면의 연약함이 숨어있을 때가 많습니다.", desc: "솔직히 그 조건들은 나의 외로움, 결핍, 혹은 미래에 대한 불안을 채우기 위한 ‘나 중심적인 조건’은 아닌가요?" },
-        { chapter: "1장: 환상 깨기", title: "Q3. 죄인과 죄인의 만남", quote: "“세상에 완벽하게 맞는 사람은 없다. 결혼은 두 명의 죄인이 만나는 것이다.”", text: "팀 켈러의 말에 동의하나요? 연애나 인간관계에서 마주하는 타인의 연약함을 떠올려 봅시다.", desc: "만약 상대방이 내가 정말 싫어하는 단점(죄성)을 적나라하게 드러낸다면 어떻게 대처할 것 같나요?" },
-        
-        // 2장
-        { chapter: "2장: 돕는 배필", title: "Q4. 감정이 식어버릴 때", quote: "“사랑하기 때문에 결혼을 유지하는 것이 아니다. 결혼이라는 언약(약속)을 맺었기 때문에 사랑하는 것이다.”", text: "요즘 미디어나 세상이 말하는 대중적인 사랑은 늘 '뜨거운 감정'만을 가장 중요하게 여깁니다.", desc: "만약 결혼 후 연애 때의 뜨거운 감정이 식어버린다면, 그 관계를 유지할 수 있는 진짜 힘은 어디서 올까요?" },
-        { chapter: "2장: 돕는 배필", title: "Q5. 언약이 있는 사랑", quote: "성경은 배우자를 ‘돕는 배필’(창 2:18)이라고 부릅니다. 이는 단순한 조력자가 아닌 생명을 거는 신실함을 뜻합니다.", desc: "내가 생각하는 진짜 ‘의리(언약) 있는 사랑’, 즉 상대방이 무너지거나 조건이 나빠졌을 때도 곁을 지키는 사랑이란 어떤 모습일까요?" },
-        { chapter: "2장: 돕는 배필", title: "Q6. 약속의 사람 되기", quote: "하나님은 우리의 상태나 조건이 가장 나쁠 때에도 우리를 향한 언약(약속)을 신실하게 지키셨습니다.", desc: "내가 누군가에게 그런 ‘조건 없는 약속의 사람’이 되어주기 위해, 지금 나에게 가장 필요한 영적 훈련은 무엇일까요?" },
-        
-        // 3장
-        { chapter: "3장: 영적 우정", title: "Q7. 지적과 도움 사이", quote: "“결혼의 목적은 배우자가 장차 하나님 안에서 변화될 영광스러운 새사람의 모습을 미리 보고, 그 과정에 기꺼이 조력자가 되는 것이다.”", text: "나를 가장 가깝고 잘 아는 연인이나 지인이 나의 연약함을 짚어낼 때를 돌아봅시다.", desc: "연약함이나 단점을 지적받을 때, 나는 그것을 기분 나쁜 ‘비난(간섭)’으로 듣나요, 아니면 나를 살리는 ‘도움(존중)’으로 받아들이나요?" },
-        { chapter: "3장: 영적 우정", title: "Q8. 성화를 돕는 조력자", quote: "팀 켈러는 결혼을 ‘서로의 성화(예수님을 닮아감)를 돕는 최고의 우정’이라고 정의합니다.", desc: "만약 여러분이 연애나 결혼을 한다면, 상대방을 하나님께 더 가깝게 가도록 이끌어주는 ‘영적 조력자’가 될 자신이 있나요?" },
-        { chapter: "3장: 영적 우정", title: "Q9. 나에게서 깎여야 할 부분", quote: "“11개월 된 아기가 부모를 힘들게 하면서도 부모를 철들게 하듯, 배우자도 내 이기심을 깎아내는 하나님의 도구입니다.”", text: "우리는 관계 속에서 나의 이기성과 마주하며 성숙해져 갑니다.", desc: "내 성격이나 성품 중, 연애와 결혼(또는 깊은 관계)을 통해 가장 많이 ‘깎여야 할 이기적인 부분’은 무엇이라고 생각하나요?" }
+        { 
+            chapter: "Q1. 영적 상태 진단", 
+            title: "나의 영혼은 몇 % 충전되어 있나요?", 
+            text: "설교중 나온 '배터리 1% 남은 스마트폰'처럼, 겉보기에는 아무 문제 없어 보이지만 속으로는 방전되어 가고 있지는 않나요?",
+            desc: "최근 나의 일상(학업, 취업 준비, 직장 생활 등)에서 사소한 일에 쉽게 지치거나 영적으로 무기력함을 느꼈던 순간이 있다면 서로 솔직하게 나누어 봅시다." 
+        },
+        { 
+            chapter: "Q2. 우선순위 점검", 
+            title: "내 삶의 '노예 근성'과 '생존 강박'은?", 
+            text: "하나님은 쉬면 죽는 줄 알았던 애굽의 노예들에게 안식일을 주시며 멈추는 훈련을 시키셨습니다.",
+            desc: "내가 주일 예배를 드리면서도 여전히 머릿속으로 내려놓지 못하는 세상의 염려(예: 학점, 자격증, 업무, 미래에 대한 불안 등)는 무엇인가요? 내가 하나님보다 더 의지하고 붙들고 있는 삶의 '우상'이 있다면 무엇인지 나누어 봅시다." 
+        },
+        { 
+            chapter: "Q3. 실제적 결단", 
+            title: "무너진 예배를 위한 나의 '상단 고정'은?", 
+            text: "\"예배가 무너지면 내 삶 전체가 모래성처럼 무너진다\"고 했습니다. 내 삶을 견고하게 지켜내기 위해, 이번 주 주일 예배를 사수하기 위한 나만의 구체적인 결단 한 가지를 선택하고 순원들과 공유해 봅시다.",
+            choices: [
+                "📱 <b>토요일 밤의 구별:</b> 토요일 밤 12시 전에 스마트폰을 끄고 주일을 준비하며 일찍 잠들기",
+                "🙏 <b>마음의 구별:</b> 예배 자리에 앉을 때 세상 걱정과 내일의 계획을 십자가 앞에 다 내려놓기",
+                "📌 <b>시간의 구별:</b> 주일 오전 및 예배 시간에는 그 어떤 사적인 약속이나 스케줄도 침범하지 못하도록 '상단 고정'해 두기"
+            ]
+        }
     ];
 
     function startSlide() {
@@ -123,8 +130,19 @@
         const slidesDiv = document.getElementById('slides');
         const q = questions[currentSlide];
         
-        let quoteHTML = q.quote ? `<div class="quote-box">${q.quote}</div>` : "";
-        let textHTML = q.text ? `<div class="content-text">${q.text}</div>` : "";
+        let contentHTML = `<div class="content-text">${q.text}</div>`;
+        
+        // Q3처럼 선택지(choices)가 있는 경우의 렌더링 처리
+        let descHTML = "";
+        if (q.desc) {
+            descHTML = `<div class="content-text" style="font-weight: bold; color: #bf360c; background: #fff5f5; padding: 15px; border-radius: 10px; line-height: 1.6; border: 1px solid #ffcdd2; margin-top:15px;">${q.desc}</div>`;
+        } else if (q.choices) {
+            descHTML = `<div style="margin-top: 15px;">`;
+            q.choices.forEach(choice => {
+                descHTML += `<div class="choice-box">${choice}</div>`;
+            });
+            descHTML += `</div>`;
+        }
 
         slidesDiv.innerHTML = `
             <div style="animation: fadeIn 0.3s; display: flex; flex-direction: column; height: 100%;">
@@ -133,9 +151,8 @@
                     <span class="slide-title">${q.title}</span>
                 </div>
                 <div style="flex-grow: 1; overflow-y: auto;">
-                    ${quoteHTML}
-                    ${textHTML}
-                    <div class="desc-text">${q.desc}</div>
+                    ${contentHTML}
+                    ${descHTML}
                 </div>
             </div>
         `;
@@ -160,7 +177,7 @@
     }
 
     function finishSlide() {
-        alert("오늘 순 공과 나눔을 모두 마쳤습니다. 수고하셨습니다! 소그룹별로 자유롭게 기도로 마무리해 주세요. 🙏");
+        alert("오늘 순 공과 나눔을 모두 마쳤습니다. 결단한 내용을 구체적인 행동으로 옮기며 승리하는 한 주가 되길 응원합니다. 서로를 위해 기도하고 모임을 마무리해 주세요! 🙏");
         goHome();
     }
 
