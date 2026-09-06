@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제자교회 청년부 8월 9일 순 공과</title>
+    <title>제자교회 청년부 9월 6일 순 공과</title>
     <style>
         body {
-            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #e1f5fe 100%);
+            background: linear-gradient(135deg, #fcf8f2 0%, #f7ebd9 50%, #f5e6d3 100%);
             font-family: 'Pretendard', -apple-system, sans-serif;
             display: flex;
             justify-content: center;
@@ -20,7 +20,7 @@
             backdrop-filter: blur(8px);
             padding: 1.8rem;
             border-radius: 24px;
-            box-shadow: 0 12px 30px rgba(0, 131, 143, 0.15);
+            box-shadow: 0 12px 30px rgba(141, 36, 60, 0.12);
             text-align: center;
             max-width: 450px;
             width: 85%;
@@ -29,44 +29,44 @@
             flex-direction: column;
             border: 1px solid rgba(255, 255, 255, 0.8);
         }
-        h1 { color: #0277bd; font-size: 1.35rem; margin-bottom: 0.3rem; line-height: 1.4; }
-        .subtitle { color: #00838f; font-size: 0.95rem; margin-bottom: 1.2rem; font-weight: bold; }
+        h1 { color: #8d243c; font-size: 1.35rem; margin-bottom: 0.3rem; line-height: 1.4; }
+        .subtitle { color: #b71c1c; font-size: 0.95rem; margin-bottom: 1.2rem; font-weight: bold; }
         
         .menu-group { display: flex; flex-direction: column; gap: 12px; flex-grow: 1; justify-content: center; }
         .btn {
             padding: 18px;
             border: none;
             border-radius: 14px;
-            background: linear-gradient(135deg, #e0f7fa, #b2f5ea);
-            color: #006064;
+            background: linear-gradient(135deg, #fbe9e7, #ffccbc);
+            color: #5d4037;
             font-size: 1.05rem;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 150, 136, 0.12);
+            box-shadow: 0 4px 12px rgba(141, 36, 60, 0.08);
             transition: transform 0.2s, box-shadow 0.2s;
         }
         .btn:active { transform: scale(0.98); }
 
         #slide-container { display: none; flex-direction: column; height: 100%; text-align: left; }
         #slides { flex-grow: 1; overflow-y: auto; padding-right: 5px; }
-        .slide-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; border-bottom: 2px solid #e0f7fa; padding-bottom: 10px; }
-        .slide-step { background: linear-gradient(135deg, #0288d1, #0097a7); color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; white-space: nowrap; }
-        .slide-title { color: #0277bd; font-size: 1.05rem; font-weight: bold; line-height: 1.4; }
+        .slide-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; border-bottom: 2px solid #fbe9e7; padding-bottom: 10px; }
+        .slide-step { background: linear-gradient(135deg, #8d243c, #b71c1c); color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; white-space: nowrap; }
+        .slide-title { color: #8d243c; font-size: 1.05rem; font-weight: bold; line-height: 1.4; }
         
-        .verse-box { background: #f0f4f8; border: 1px dashed #80deea; padding: 12px; margin-bottom: 15px; font-size: 0.85rem; color: #455a64; line-height: 1.5; border-radius: 12px; }
-        .content-text { font-size: 0.95rem; line-height: 1.7; color: #37474f; margin-bottom: 12px; }
-        .desc-box { font-size: 0.95rem; line-height: 1.6; color: #006064; background: #e0f2f1; padding: 15px; border-radius: 12px; border: 1px solid #b2dfdb; margin-top: 15px; }
-        .point-title { font-size: 0.85rem; color: #00838f; font-weight: bold; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
-        .point-item { font-size: 0.88rem; color: #455a64; margin-left: 5px; margin-bottom: 4px; position: relative; padding-left: 12px; }
-        .point-item::before { content: "💧"; position: absolute; left: -4px; font-size: 0.75rem; }
+        .verse-box { background: #faf4ef; border: 1px dashed #d7ccc8; padding: 12px; margin-bottom: 15px; font-size: 0.85rem; color: #5d4037; line-height: 1.5; border-radius: 12px; }
+        .content-text { font-size: 0.95rem; line-height: 1.7; color: #4e342e; margin-bottom: 12px; }
+        .desc-box { font-size: 0.95rem; line-height: 1.6; color: #4a148c; background: #fce4ec; padding: 15px; border-radius: 12px; border: 1px solid #f8bbd0; margin-top: 15px; }
+        .point-title { font-size: 0.85rem; color: #8d243c; font-weight: bold; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+        .point-item { font-size: 0.88rem; color: #4e342e; margin-left: 5px; margin-bottom: 4px; position: relative; padding-left: 14px; }
+        .point-item::before { content: "🍁"; position: absolute; left: -4px; font-size: 0.75rem; }
         
         .controls { margin-top: auto; display: flex; flex-direction: column; gap: 8px; padding-top: 15px; }
         .nav-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-        .nav-btn { flex: 1; padding: 12px 5px; border: none; border-radius: 10px; background: #f1f8e9; font-weight: bold; cursor: pointer; color: #558b2f; font-size: 0.9rem; }
-        .next-btn { background: #b2ebf2; color: #006064; }
+        .nav-btn { flex: 1; padding: 12px 5px; border: none; border-radius: 10px; background: #efebe9; font-weight: bold; cursor: pointer; color: #5d4037; font-size: 0.9rem; }
+        .next-btn { background: #ffccbc; color: #4e342e; }
         
-        .submit-btn { background: linear-gradient(135deg, #0288d1, #0097a7); color: white; flex: 1.4; } 
-        .home-btn { width: 100%; padding: 10px; background: #78909c; color: white; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; font-size: 0.85rem; }
+        .submit-btn { background: linear-gradient(135deg, #8d243c, #b71c1c); color: white; flex: 1.4; } 
+        .home-btn { width: 100%; padding: 10px; background: #8d6e63; color: white; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; font-size: 0.85rem; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -75,10 +75,10 @@
 
 <div class="container">
     <div id="main-menu">
-        <h1>🌊 8월 9일 순 공과</h1>
-        <div class="subtitle">내 힘은 부족해도 괜찮습니다</div>
+        <h1>🍁 9월 6일 순 공과</h1>
+        <div class="subtitle">내가 듣고 싶은 말보다</div>
         <div class="verse-box">
-            "여호와께서 기드온에게 이르시되 너를 따르는 백성이 너무 많은즉 내가 그들의 손에 미디안 사람을 넘겨 주지 아니하리니 이는 이스라엘이 나를 거스려 스스로 자랑하기를 내 손이 나를 구원하였다 할까 함이니라" <br>(사사기 7:2)
+            "아이 사무엘이 엘리 앞에서 여호와를 섬길 때에는 여호와의 말씀이 희귀하여 이상이 흔히 보이지 않았더라... 여호와께서 임하여 서서 전과 같이 사무엘아 사무엘아 부르시는지라 사무엘이 이르되 말씀하옵소서 주의 종이 듣겠나이다 하니" <br>(사무엘상 3:1, 10)
         </div>
         <div class="menu-group">
             <button class="btn" onclick="startSlide()">📖 말씀 소그룹 나눔<br><small style="font-weight:normal; font-size:0.8rem; display:block; margin-top:5px;">순별 나눔 시작하기</small></button>
@@ -90,7 +90,7 @@
         <div class="controls">
             <div class="nav-row">
                 <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">이전</button>
-                <span id="page-num" style="font-size: 0.8rem; color: #00838f; min-width:40px; text-align:center; font-weight:bold;"></span>
+                <span id="page-num" style="font-size: 0.8rem; color: #8d243c; min-width:40px; text-align:center; font-weight:bold;"></span>
                 <button class="nav-btn next-btn" id="nextBtn" onclick="changeSlide(1)">다음</button>
                 <button class="nav-btn submit-btn" id="submitBtn" onclick="finishSlide()">🎉 나눔 완료</button>
             </div>
@@ -104,27 +104,29 @@
 
     const questions = [
         { 
-            chapter: "Q1. 마음 열기", 
-            title: "세상의 프레임과 나의 위축감", 
-            text: "세상은 끊임없이 스펙과 자원(숫자)을 요구합니다. 최근 내 삶(취업, 직장, 학업, 인간관계, 미래 준비 등)에서 세상의 기준이나 사람들의 시선 때문에 '내 힘과 스펙이 부족하다'고 느껴 위축되거나 부담스러웠던 순간은 언제였나요?",
+            chapter: "Q1. 관찰 & 나눔", 
+            title: "말씀의 가뭄 속 내 영적 상태 점검하기", 
+            text: "본문은 \"여호와의 말씀이 희귀하여 이상이 흔히 보이지 않았다\"고 말합니다. 수많은 영상, 미디어, 설교가 넘쳐나는 시대 속에 살고 있지만, 역설적으로 '진짜 하나님의 말씀'에 집중하기는 더욱 어려워졌습니다.",
             points: [
-                "일상에서 겪는 세상의 압박과 자기 한계를 솔직하게 나누어 봅시다."
+                "지난 한 주간 일상(직장, 학업, 취업 등) 속에서 내 관심과 마음을 가장 많이 빼앗았던 소리/정보는 무엇이었나요?",
+                "하나님의 음성을 듣기 위해 지켰던 나만의 작은 순종의 자리가 있었는지 나누어 봅시다."
             ]
         },
         { 
-            chapter: "Q2. 본문 깊이 읽기", 
-            title: "내 삶의 '2만 2천 명'과 순종", 
-            text: "하나님은 13만 5천 명을 상대하는 전쟁에서 3만 2천 명 중 두려워하는 2만 2천 명을 돌려보내셨습니다. 유로 2004의 그리스 팀이 화려한 스타 플레이어 대신 감독의 전술에 100% 순종하여 승리했듯, 내가 하나님보다 더 의지하려 했거나 불안해서 움켜쥐고 있는 '나만의 2만 2천 명(내 경험, 사람의 인정, 통장 잔고, 내 고집 등)'은 무엇인가요?",
+            chapter: "Q2. 적용 & 나눔", 
+            title: "보이지 않는 '작은 일'에서의 신실함", 
+            text: "어린 사무엘은 밤중에 성소의 촛대를 관리하는 등 남들이 알아주지 않는 작은 일에 신실했습니다. 또한 하나님께서 밤중에 부르실 때마다 피곤함을 무릅쓰고 즉각 일어나는 반응을 보였습니다.",
             points: [
-                "내가 하나님보다 먼저 의지하려고 했던 인간적인 수단이나 두려움의 원인을 직면해 봅시다."
+                "하나님께서 나에게 맡겨주신 일상의 자리(기도, 인간관계, 소소한 봉사 등) 중 남들은 잘 보지 못하지만 내가 작은 순종으로 신실하게 지켜내야 할 영역은 어디인가요?"
             ]
         },
         { 
-            chapter: "Q3. 삶의 적용 및 결단", 
-            title: "약함 속에서 역사하시는 하나님", 
-            text: "하나님의 능력은 나의 완벽함이 아니라, 내 약함을 인정하고 주님의 음성에 순종할 때(300명) 시작됩니다. 이번 한 주간 내 힘으로 해결하려 했던 마음을 내려놓고, 하나님의 말씀과 지시하심에 순종함으로 나아갈 구체적인 삶의 영역은 어디인가요?",
+            chapter: "Q3. 결단 & 나눔", 
+            title: "내가 듣고 싶은 말 vs 주님이 하시는 말씀", 
+            text: "사무엘은 스승 엘리 가문의 심판이라는 뼈아픈 진리의 말씀을 들었고 이를 가감 없이 전했습니다. 참된 믿음은 '내가 듣고 싶은 위로'만 찾는 것이 아니라, '나를 교정하고 돌이키게 하는 하나님의 진짜 말씀'을 겸손히 받아오는 것입니다.",
             points: [
-                "내 약함을 은혜의 통로로 바라보며, 한 주간 실천할 기도제목과 결단을 나누어 봅시다."
+                "최근 내 편의나 감정 때문에 외면하고 싶었던 하나님의 말씀이나 깨달음이 있었나요?",
+                "\"말씀하옵소서 주의 종이 듣겠나이다\"라는 고백처럼 이번 한 주간 내 삶에서 구체적으로 실천해 볼 순종 한 가지를 결단해 봅시다."
             ]
         }
     ];
@@ -145,7 +147,7 @@
         let descHTML = "";
         if (q.points) {
             descHTML = `<div class="desc-box">`;
-            descHTML += `<div class="point-title">💡 나눔 목적 & 포인트</div>`;
+            descHTML += `<div class="point-title">💡 나눔 질문 & 포인트</div>`;
             q.points.forEach(point => {
                 descHTML += `<div class="point-item">${point}</div>`;
             });
@@ -185,7 +187,7 @@
     }
 
     function finishSlide() {
-        alert("오늘 순 공과 나눔을 모두 마쳤습니다. 내 힘이 부족해도 낙심하지 않고, 오직 주님의 말씀과 인도하심에 온전히 순종하여 승리하는 한 주가 되기를 축복합니다. 함께 기도함으로 모임을 마무리해 주세요! 🌊");
+        alert("오늘 순 공과 나눔을 모두 마쳤습니다. 내가 듣고 싶은 소리보다 주님의 진짜 말씀에 귀 기울이고, 일상의 작은 자리에서 기꺼이 순종함으로 응답하는 청년들이 되기를 축복합니다. 함께 기도함으로 모임을 마무리해 주세요! 🍁");
         goHome();
     }
 
